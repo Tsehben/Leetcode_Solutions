@@ -11,8 +11,9 @@ def containsDuplicate(nums):
             # once we see the number already in the seen set, we end implying there is a duplicate
             return True
         seen.add(num)
+     return False
 
 
 
 
-print(containsDuplicate([1,2,1]))
+print(containsDuplicate([1,2,3]))
