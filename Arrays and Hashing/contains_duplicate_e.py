@@ -8,10 +8,10 @@ def containsDuplicate(nums):
             dict[i] = 1
 
     for i in dict.values():
-        print(i)
-    #     if i > 1:
-    #         return True
-    # return False
+       
+        if i > 1:
+            return True
+    return False
 
 
 
