@@ -12,7 +12,7 @@ def containsDuplicate(nums):
             return True
         seen.add(num)
      return False
-
+# same as what neetcode did 
 
 
 
