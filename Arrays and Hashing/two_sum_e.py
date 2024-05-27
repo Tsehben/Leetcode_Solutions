@@ -24,8 +24,18 @@ def twoSum(nums, target):
    
    
 
+# more compact 
 
-print(twoSum([3,3], 6))
+def twoSume(nums, target):
+    nums_map = {}
+
+    for i, num in enumerate(nums):
+        remainder = target - num
+        if remainder in nums_map:
+            return[i, nums_map[remainder]]
+        nums_map[num] = i
+
+print(twoSume([3,3], 6))
 
 
 
