@@ -17,3 +17,6 @@ def containsDuplicate(nums):
 
 
 print(containsDuplicate([1,2,3]))
+
+
+
