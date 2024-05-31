@@ -13,8 +13,8 @@ def groupAna(strs):
         
         current_ana = [strs[i]]
         seen.add(strs[i])
-        for j in range(len(strs)):
-            if i!=j and isAnagram(strs[i], strs[j]) and strs[j] not in seen:
+        for j in range(i+1, len(strs)):
+            if isAnagram(strs[i], strs[j]):
                 current_ana.append(strs[j])
                 seen.add(strs[j])
         grouped_ana.append(current_ana)
@@ -24,5 +24,5 @@ def groupAna(strs):
     return grouped_ana
 
 
-print(groupAna(["eat","tea","tan","ate","nat","bat"]))
+print(groupAna(["",""]))
 
