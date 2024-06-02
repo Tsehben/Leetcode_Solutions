@@ -1,37 +1,33 @@
-new = ""
 
-nam = ["ebe", "kwak", "nyame"]
+# most optimal solution with O(m * n )
+def encode(strs):
 
-for i in range(len(nam)):
-    if i == len(nam) - 1:
-        new += nam[i]
-    else:
-        new += f"{nam[i]}-"
-
-decoded = []
-# use two pointer to keep track of what is happening 
-
-l_ptr = 0
-r_ptr = 1
-n = len(new) - 1
-while r_ptr <= n:
-    if new[r_ptr] == '-' :
-        decoded.append(new[l_ptr:r_ptr])
-    elif r_ptr == n:
-        decoded.append(new[l_ptr:r_ptr + 1])
-
-    else:
-        r_ptr += 1
-        continue
-    
-    l_ptr = r_ptr + 1
-    r_ptr += 1
+    # iterate throught elements, get length and add a delimiter to each string in the list then combine to one string. 
+    new_str = ""
+    for s in strs:
+        new_str += str(len(s)) + "#" + s
+    return new_str
 
 
-name = "EBENEzer"
-n = 2
-print(name[n:n+3])
 
-print(new)
-print(decoded)
 
+
+def decode(s):
+
+    res = []
+    i = 0
+    # iterate throught the encoded string, find the delimeter and the number and form  the substring , then append to the res list
+
+    while i < len(s):
+        j = i
+        while s[j] != "#":
+            j += 1
+        length = int(s[i:j])
+
+        res.append(s[j+1:  j + 1 + length])
+        i = j + 1 + length 
+
+    return res
+
+
+print(decode(encode(["Hello", "World"])))
