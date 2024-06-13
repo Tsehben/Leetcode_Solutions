@@ -22,3 +22,23 @@ class Solution:
             tail.next = list2
 
         return dummy.next
+    
+
+
+    #remove Duplicate
+
+    class Solution:
+    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        # two pointer
+
+       prev = curr = head
+
+       while curr:
+            while curr and prev.val == curr.val:
+                curr = curr.next
+            prev.next = curr
+
+            prev = curr
+
+       return head
