@@ -80,7 +80,29 @@ class LinkedList:
 
         return
     
+    def insert(self, index, data):
+        if index < 0 or index > self.get_length():
+            raise Exception("Invalid Index")
+    
+        if index == 0:
+            self.insert_at_beginning(data)
+            return
         
+        itr = self.head
+        count = 0
+        while itr:
+            if count == index - 1:
+                itr.next = Node(data, itr.next)
+
+              
+                
+                break
+            
+            itr = itr.next
+            count += 1
+        return
+
+    
 
 
     
@@ -99,5 +121,6 @@ ll.insert_at_end(80)
 
 #ll.get_length()
 # ll.remove(2)
-ll.remove(4)
+# ll.remove(4)
+ll.insert(3,12)
 ll.print_list()
