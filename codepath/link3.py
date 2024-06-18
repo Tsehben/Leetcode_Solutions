@@ -1,3 +1,10 @@
+class ListNode:
+    def __init__(self, val = None, next = None):
+        self.val = val
+        self.next = next
+
+
+
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         # pointing to our answer hence extra space being used, and assign this to cur
@@ -26,3 +33,21 @@ class Solution:
             cur = cur.next
 
         return dummy.next
+
+# reverse linked lIst
+
+#         self.next = next
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+        prev = None
+        cur = head
+
+        while cur:
+             nxt = cur.next
+             cur.next = prev
+             prev = cur
+             cur = nxt
+        
+        return prev
+        
